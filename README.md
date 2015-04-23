@@ -19,13 +19,14 @@ var authority = 'https://login.windows.net/' + tenantName + '/';
 var redirectUrl = 'http://localhost:4400/services/aad/redirectTarget.html';
 
 var AuthenticationContext = Microsoft.ADAL.AuthenticationContext;
+var ActiveDirectoryClient = Microsoft.AADGraph.ActiveDirectoryClient;
 
 var authContext = new AuthenticationContext(authority);
-var client = new Microsoft.AADGraph.ActiveDirectoryClient(endpointUrl, authContext, resourceUrl, appId, redirectUrl);
+var client = new ActiveDirectoryClient(endpointUrl, authContext, resourceUrl, appId, redirectUrl);
 
 client.users.getUsers().fetchAll().then(function (users) {
     result.forEach(function (user) {
-        console.log('User "' + user.displayName + '" userPrincipalName: "' + user.userPrincipalName + '"');
+        console.log('User: ' + user.displayName + ' PrincipalName: ' + user.userPrincipalName);
     });
 }, function(error) {
     console.log(error);

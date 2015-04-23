@@ -1,0 +1,21 @@
+﻿<ion-content overflow-scroll="true">
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">Display name</span>
+        <input type="text" readonly="true" value="{{vm.app.displayName}}">
+    </label>
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">Identifier URIs</span>
+        <p ng-hide="vm.app.identifierUris.length">No identifier URIs.</p>
+        <span ng-repeat="uri in vm.app.identifierUris">
+            <input type="text" readonly="true" value="{{uri}}">
+        </span>
+    </label>
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">App Id</span>
+        <input type="text" readonly="true" value="{{vm.app.appId}}">
+    </label>
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">Object Id</span>
+        <input type="text" readonly="true" value="{{vm.app.objectId}}">
+    </label>
+</ion-content>

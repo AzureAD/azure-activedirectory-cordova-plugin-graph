@@ -1,0 +1,15 @@
+﻿<ion-view view-title="Groups">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-positive" ng-click="vm.modal.show()">
+            Add
+        </button>
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true">
+        <ion-list>
+            <ion-item ng-repeat="group in vm.groups" ng-click="vm.open(group.objectId)">
+                {{group.displayName}}
+                <p>{{group.description}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

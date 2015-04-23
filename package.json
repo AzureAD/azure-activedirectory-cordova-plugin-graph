@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-ms-aad-graph",
+  "version": "0.0.1",
+  "description": "Microsoft Azure Active Directory Graph Cordova plugin.",
+  "cordova": {
+    "id": "cordova-plugin-ms-aad-graph",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AzureAD/azure-activedirectory-cordova-plugin-graph.git"
+  },
+  "keywords": [
+    "microsoft",
+    "azure",
+    "aad",
+    "graph",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+  ],
+  "author": "MSOpenTech",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/AzureAD/azure-activedirectory-cordova-plugin-graph/issues"
+  },
+  "homepage": "https://github.com/AzureAD/azure-activedirectory-cordova-plugin-graph#readme"
+}

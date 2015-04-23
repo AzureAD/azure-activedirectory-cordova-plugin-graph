@@ -1,0 +1,42 @@
+﻿<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">Edit Application</h1>
+        <button class="button button-clear button-primary" ng-click="vm.cancelModal()">Cancel</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <form name="editForm" novalidate="" ng-submit="vm.edit(editForm)">
+            <div class="list">
+                <label class="item item-input"
+                       ng-class="{ 'has-error' : editForm.displayname.$invalid}">
+                    <span class="input-label">Display Name</span>
+                    <input type="text"
+                           class="edit_input"
+                           name="displayname"
+                           ng-model="vm.updatedFields.displayName"
+                           required>
+                </label>
+
+                <div class="form-errors"
+                     ng-messages="editForm.displayname.$error"
+                     ng-messages-include="views/validation-errors.html">
+                </div>
+
+                <label class="item item-input"
+                       ng-class="{ 'has-error' : editForm.identifieruris.$invalid }">
+                    <span class="input-label">Identifier URIs</span>
+                    <input type="text" class="edit_input"
+                           name="identifieruris"
+                           ng-model="vm.updatedFields.identifierUris"
+                           required>
+                </label>
+
+                <div class="form-errors"
+                     ng-messages="editForm.identifieruris.$error"
+                     ng-messages-include="views/validation-errors.html">
+                </div>
+
+                <button type="submit" class="button button-full button-positive">Edit</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

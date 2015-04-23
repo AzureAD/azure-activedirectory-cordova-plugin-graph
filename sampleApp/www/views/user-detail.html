@@ -1,0 +1,39 @@
+﻿<ion-view view-title="{{vm.user.displayName}}">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-positive" ng-click="vm.showResetPasswordConfirmation()">
+            Reset Password
+        </button>
+        <button class="button button-clear button-positive" ng-click="vm.editModal.show()">
+            Edit
+        </button>
+        <button class="button button-clear button-assertive" ng-click="vm.showDeleteConfirmation()">
+            Delete
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">User principal name</span>
+            <input type="text" readonly="true" value="{{vm.user.userPrincipalName}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Display name</span>
+            <input type="text" readonly="true" value="{{vm.user.displayName}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">First name</span>
+            <input type="text" readonly="true" value="{{vm.user.givenName}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Last name</span>
+            <input type="text" readonly="true" value="{{vm.user.surname}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Mail nickname</span>
+            <input type="text" readonly="true" value="{{vm.user.mailNickname}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Object Id</span>
+            <input type="text" readonly="true" value="{{vm.user.objectId}}">
+        </label>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+﻿<ion-view view-title="{{vm.group.displayName}}">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-positive" ng-click="vm.editModal.show()">
+            Edit
+        </button>
+        <button class="button button-clear button-assertive" ng-click="vm.showGroupDeleteConfirmation()">
+            Delete
+        </button>
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Display name</span>
+            <input type="text" readonly="true" value="{{vm.group.displayName}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Description</span>
+            <input type="text" readonly="true" value="{{vm.group.description}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Object Id</span>
+            <input type="text" readonly="true" value="{{vm.group.objectId}}">
+        </label>
+        <h2>Members:</h2>
+        <p ng-hide="vm.members.length">This group has no members.</p>
+        <ion-list show-delete="true">
+            <ion-item ng-repeat="member in vm.members">
+                <ion-delete-button class="ion-minus-circled" ng-click="vm.deleteMember(member.objectId)"></ion-delete-button>
+                <p ng-click="vm.open(member.objectId)">{{member.displayName}}</p>
+                <p>{{member.type}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-stable padding-bottom">
+        <!--<button class="button button-block button-positive">Add member</button>-->
+        <div class="button-bar">
+            <a class="button button-positive" ng-click="vm.showAddMember()">Add member</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,10 @@
+﻿<ion-view view-title="Deleted Apps">
+    <ion-content overflow-scroll="true">
+        <ion-list>
+            <ion-item ng-repeat="app in vm.deletedApps" ng-click="vm.open(app.objectId)">
+                {{app.displayName}}
+                <p ng-repeat="uri in app.identifierUris">{{uri}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

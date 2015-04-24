@@ -39,8 +39,7 @@
             getDeletedApp: getDeletedApp,
             restoreApp: restoreApp,
             authenticate: authenticate,
-            logOut: logOut,
-            isLoginRequired: isLoginRequired
+            logOut: logOut
         };
         return service;
 
@@ -474,10 +473,6 @@
             }, onError.bind(promise));
 
             return promise;
-        }
-
-        function isLoginRequired() {
-            return authContext.isLoginRequired(resourceUrl, appId);
         }
     }
 })();

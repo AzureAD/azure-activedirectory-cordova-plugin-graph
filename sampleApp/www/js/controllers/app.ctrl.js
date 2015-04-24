@@ -12,33 +12,26 @@
         var LOADING_TIMEOUT = 15 * 1000;
 
         $scope.login = function () {
-            AadClient.isLoginRequired().then(function (isRequired) {
-                if (isRequired) {
-                    $scope.showLoading();
-                    AadClient.authenticate().then(function (token) {
-                        $scope.$emit('applications:listChanged');
-                        $scope.$emit('deletedApps:listChanged');
-                        $scope.$emit('users:listChanged');
-                        $scope.$emit('groups:listChanged');
-                        $scope.hideLoading();
-                    }, $scope.errorHandler);
-                }
+            $scope.showLoading();
+            AadClient.authenticate().then(function (token) {
+                $scope.$emit('applications:listChanged');
+                $scope.$emit('deletedApps:listChanged');
+                $scope.$emit('users:listChanged');
+                $scope.$emit('groups:listChanged');
+                $scope.hideLoading();
             }, $scope.errorHandler);
         };
 
         $scope.logOut = function () {
-            AadClient.isLoginRequired().then(function (isRequired) {
-                $scope.showLoading();
-                AadClient.logOut().then(function() {
-                    $scope.hideLoading();
-                    if (isRequired === false) {
-                        $ionicPopup.alert({
-                            title: 'Message',
-                            template: 'Logged out successfully!',
-                        });
-                    }
-                }, $scope.errorHandler);
-            }, $scope.errorHandler);            
+            $scope.showLoading();
+            AadClient.logOut().then(function() {
+                $scope.hideLoading();
+
+                $ionicPopup.alert({
+                    title: 'Message',
+                    template: 'Logged out successfully!',
+                });
+            }, $scope.errorHandler);
         };
 
         // Open links in side menu

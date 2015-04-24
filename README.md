@@ -33,7 +33,7 @@ client.users.getUsers().fetchAll().then(function (users) {
 });
 ```
 
-Complete example is available [here](https://github.com/AzureAD/azure-activedirectory-cordova-plugin-graph/tree/master/sample).
+Complete example is available [here](https://github.com/AzureADSamples/NativeClient-GraphAPI-Cordova).
 
 ## Installation Instructions ##
 

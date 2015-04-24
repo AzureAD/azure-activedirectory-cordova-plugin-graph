@@ -107,7 +107,7 @@
             var name = userName || displayName || getGuid();
             name = trimInternalSpaces(name);
 
-            var user = new AadGraph.User();
+            var user = new Microsoft.AADGraph.User();
             user.displayName = displayName;
             user.accountEnabled = true;
             user.mailNickname = name + 'MailNickname';
@@ -121,7 +121,7 @@
                 user.surname = lastName;
             }
 
-            var passwordProfile = new AadGraph.PasswordProfile();
+            var passwordProfile = new Microsoft.AADGraph.PasswordProfile();
             passwordProfile.password = generatePassword();
             passwordProfile.forceChangePasswordNextLogin = true;
             user.passwordProfile = passwordProfile;
@@ -175,7 +175,7 @@
         function resetPassword(user) {
             var promise = PromiseFactory.createPromise();
 
-            var passwordProfile = new AadGraph.PasswordProfile();
+            var passwordProfile = new Microsoft.AADGraph.PasswordProfile();
             passwordProfile.password = generatePassword();
             passwordProfile.forceChangePasswordNextLogin = true;
             user.passwordProfile = passwordProfile;
@@ -252,7 +252,7 @@
         }
 
         function createGroup(displayName, description) {
-            var group = new AadGraph.Group(AadClient.context, null, null);
+            var group = new Microsoft.AADGraph.Group(AadClient.context, null, null);
             group.displayName = displayName || 'testGroup1';
             group.description = description;
             group.mailNickname = 'test';
@@ -380,7 +380,7 @@
         }
 
         function createApp(identifierUris, displayName) {
-            var app = new AadGraph.Application(AadClient.context, null, null);
+            var app = new Microsoft.AADGraph.Application(AadClient.context, null, null);
             app.displayName = displayName || 'testApp1';
             app.identifierUris = identifierUris;
             return app;

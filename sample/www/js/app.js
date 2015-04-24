@@ -33,10 +33,10 @@
           });
       })
 
-    .value('tenantName', 'sampleDirectory2015.onmicrosoft.com')
-    .value('authority', 'https://login.windows.net/common/')
+    .value('tenantName', 'testlaboratory.onmicrosoft.com')
+    .value('authority', 'https://login.windows.net/testlaboratory.onmicrosoft.com/')
     .value('resourceUrl', 'https://graph.windows.net/')
-    .value('appId', '98ba0820-f7da-4411-87bb-598e0475536b')
-    .value('redirectUrl', 'http://localhost:4400/services/aad/redirectTarget.html');
+    .value('appId', '3cfa20df-bca4-4131-ab92-626fb800ebb5')
+    .value('redirectUrl', 'http://test.com');
 
 })();

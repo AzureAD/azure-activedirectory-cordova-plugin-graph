@@ -1,4 +1,7 @@
-﻿/* global cordova, exports, Exchange, O365Auth, jasmine, describe, it, expect, beforeEach, afterEach, pending */
+﻿
+// Copyright (c) Microsoft Open Technologies, Inc.  All rights reserved.  Licensed under the Apache License, Version 2.0.  See License.txt in the project root for license information.
+
+/* global cordova, exports, Exchange, O365Auth, jasmine, describe, it, expect, beforeEach, afterEach, pending */
 
 var TENANT_ID = '17bf7168-5251-44ed-a3cf-37a5997cc451';
 var APP_ID = '3cfa20df-bca4-4131-ab92-626fb800ebb5';

@@ -184,6 +184,11 @@ var Microsoft;
                                 return item.clientId === appId && item.resource === resourceUrl;
                             })[0];
 
+                            correspondingCacheItem = correspondingCacheItem || tokenCacheItems.filter(function (item) {
+                                return item.clientId === appId && item.isMultipleResourceRefreshToken === true
+                                    && item.authority.replace(/\/?$/, '/') === authContext.authority.replace(/\/?$/, '/'); // Ensuring trailing slash exists
+                            })[0];
+
                             if(correspondingCacheItem == null) {
                                 authContext.acquireTokenAsync(resourceUrl, appId, redirectUrl).then(function (authResult) {
                                     d.resolve(authResult.accessToken);
@@ -1155,11 +1160,11 @@ var Microsoft;
             });
 
             DirectoryObject.prototype.update_manager = function (value) {
-                var deferred = new Deferred(), 
+                var deferred = new Deferred(),
                 request = new Microsoft.DirectoryServices.Extensions.Request(this.getPath("$links/manager"));
 
                 request.method = 'PUT';
-                
+
                 request.data = JSON.stringify({ url: this.context.handlePath(value.path) });
 
                 this.context.request(request).then(function (data) {

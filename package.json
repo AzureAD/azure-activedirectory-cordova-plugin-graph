@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ms-aad-graph",
-  "version": "0.0.1",
+  "version": "0.6.0",
   "description": "Microsoft Azure Active Directory Graph Cordova plugin.",
   "cordova": {
     "id": "cordova-plugin-ms-aad-graph",

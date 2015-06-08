@@ -14,10 +14,6 @@
 
     <dependency id="cordova-plugin-ms-adal" url="https://github.com/azuread/azure-activedirectory-library-for-cordova.git"/>
 
-    <platform name="android">
-        <dependency id="cordova-plugin-whitelist" url="https://github.com/apache/cordova-plugin-whitelist.git"/>
-    </platform>
-
     <js-module name="AADGraph" src="www/aadgraph.js">
         <clobbers target="Microsoft.AADGraph" />
     </js-module>

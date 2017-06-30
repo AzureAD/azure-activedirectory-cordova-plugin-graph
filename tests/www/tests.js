@@ -10,7 +10,7 @@ var REDIRECT_URL = "http://test.com";
 // Used for test entities userPrincipalName generation
 var TENANT_NAME = 'testlaboratory.onmicrosoft.com';
 
-var AUTH_URL = 'https://login.windows.net/' + TENANT_ID + '/';
+var AUTH_URL = 'https://login.microsoftonline.com/' + TENANT_ID + '/';
 var RESOURCE_URL = 'https://graph.windows.net/';
 var ENDPOINT_URL = RESOURCE_URL + TENANT_ID;
 

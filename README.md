@@ -38,7 +38,7 @@ var resourceUrl = 'https://graph.windows.net/';
 var tenantName = 'sampleDirectory2015.onmicrosoft.com';
 var endpointUrl = resourceUrl + tenantName;
 var appId = '98ba0820-f7da-4411-87bb-598e0475536b';
-var authority = 'https://login.windows.net/' + tenantName + '/';
+var authority = 'https://login.microsoftonline.com/' + tenantName + '/';
 var redirectUrl = 'http://localhost:4400/services/aad/redirectTarget.html';
 
 var AuthenticationContext = Microsoft.ADAL.AuthenticationContext;
